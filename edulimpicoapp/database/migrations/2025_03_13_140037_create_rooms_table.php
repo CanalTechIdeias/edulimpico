@@ -15,6 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('topic');
+            $table->unsignedBigInteger('adm_id');
+            $table->string('adm_name');
+            $table->foreign('adm_id')->references('id')->on('users');
+            $table->foreign('adm_name')->references('name')->on('users');
             $table->timestamps();
         });
     }
