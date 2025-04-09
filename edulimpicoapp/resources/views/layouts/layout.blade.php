@@ -10,6 +10,9 @@
     <title>Edulimpico</title>
 </head>
 <body>
+    
+    <x-nav/>
+    
     <main>
         {{ $slot }}
     </main>

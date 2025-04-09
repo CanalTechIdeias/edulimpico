@@ -9,4 +9,14 @@ class Ranking extends Model
 {
     /** @use HasFactory<\Database\Factories\RankingFactory> */
     use HasFactory;
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'name',
+        'points'
+    ];
 }

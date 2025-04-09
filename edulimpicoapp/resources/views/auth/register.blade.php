@@ -3,6 +3,9 @@
     <form action="" method="post">
         @csrf
 
+        <label for="Name">Name:</label>
+        <input type="text" name="name" required>
+
         <label for="email">Email:</label>
         <input type="email" name="email" required>
 

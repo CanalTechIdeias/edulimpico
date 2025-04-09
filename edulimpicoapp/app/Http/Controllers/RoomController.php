@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class RoomController extends Controller
 {
@@ -11,7 +13,11 @@ class RoomController extends Controller
      */
     public function index()
     {
-        //
+
+        $rooms = DB::table('rooms')->get();
+        
+        return view('rooms.index', ['rooms' => $rooms]);
+    
     }
 
     /**
@@ -19,7 +25,7 @@ class RoomController extends Controller
      */
     public function create()
     {
-        //
+        return view('rooms.create');
     }
 
     /**
@@ -35,7 +41,15 @@ class RoomController extends Controller
      */
     public function show(string $id)
     {
-        //
+        
+        $room = DB::table('rooms')->where('id', $id)->get();
+
+        if (!$room) {
+            abort(404); 
+        }
+
+        return view('rooms.show', compact('room'));
+    
     }
 
     /**
@@ -43,7 +57,15 @@ class RoomController extends Controller
      */
     public function edit(string $id)
     {
-        //
+
+        $room = DB::table('rooms')->where('id', $id)->get();
+
+        if (!$room) {
+            abort(404); 
+        }
+
+        return view('rooms.edit', compact('room'));
+
     }
 
     /**

@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\RoomController;
+use App\Http\Controllers\RankingController;
+use App\Http\Controllers\SubscribeController;
 use App\Http\Controllers\QuestionController;
 
 Route::get('/', function () {
