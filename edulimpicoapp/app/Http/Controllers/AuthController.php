@@ -48,7 +48,7 @@ class AuthController extends Controller
             return redirect()->route('rooms.index');
         }
 
-        throw ValidationException::with_message([
+        throw ValidationException::withMessages([
             'credentials' => 'Sorry, incorrect credentials'
         ]);
     }
